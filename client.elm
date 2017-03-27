@@ -11,7 +11,7 @@ main =
     , update = update
     , subscriptions = \x -> Sub.none }
 
-
+--model
 type alias Model =
   { counter : Int
   }
@@ -23,6 +23,7 @@ type Msg
 
 -- Get Method
 
+--decoding method
 decode : Decode.Decoder Int
 decode = Decode.at ["data"] Decode.int
 
@@ -51,6 +52,7 @@ setCounter =
         , withCredentials = False
         })
 
+--update
 update : Msg -> Model -> (Model, Cmd Msg)
 update msg model =
   case msg of
@@ -63,6 +65,7 @@ update msg model =
     DoPut
       (Err _) -> (model, Cmd.none)
 
+--view
 view : Model -> Html Msg
 view model =
   div []

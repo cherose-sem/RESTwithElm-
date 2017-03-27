@@ -1,4 +1,3 @@
-
 let val = 0;
 
 module.exports = {
